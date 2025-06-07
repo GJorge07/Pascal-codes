@@ -25,12 +25,12 @@ begin
             while (j<=n) and not repetiu do
             begin
                 p:=1;
-                    while (p<=n) and not repetiu do
+                    while (p<=m) and not repetiu do
                     begin
                         q:=1;
                             while (q<=n) and not repetiu do
                             begin
-                                if (w[p,q] = w[i,j]) and (p<>i) or (q<>j) then   {tem isso pra n comparar o elemento com ele mesmo}
+                                if (w[p,q] = w[i,j]) and not ((p = i) and (q = j)) then   {tem isso pra n comparar o elemento com ele mesmo}
                                     repetiu:=true;
                                 q:=q+1;
                             end;
