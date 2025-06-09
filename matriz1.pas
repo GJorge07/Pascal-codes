@@ -60,4 +60,3 @@ end.
 
 {Faça um programa em Free Pascal que leia dois inteiros positivos m e n, sendo 1 ≤ m, n ≤ 100, e uma matriz A m×n . O programa deve imprimir o números de linhas e o número de colunas que são nulas, ou seja, quando todos os elementos de uma linha ou coluna são iguais a 0 (zero).
 Nos casos de teste cada elemento x da matriz A é definido por 0 ≤ x ≤ 100.}
-
