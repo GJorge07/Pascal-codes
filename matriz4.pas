@@ -13,7 +13,24 @@ begin
             read (w[i,j]);
 end;
 
+function provareal();
+var 
+begin
+    for i:=1
+end;
 
+procedure permuta();
+var i,j:longint;
+begin
+    for i:=1 to n do
+    begin
+        for j:=1 to n do 
+        begin
+            if w[i,j] = 1 then
+                achou:=w[i,j];
+        end;
+        if achou then provareal();
+end;
 
 
 
