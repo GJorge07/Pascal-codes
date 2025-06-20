@@ -1,6 +1,7 @@
 program ex2livro;
 
 type data = record
+
     dia,mes,ano:integer;
     end;
 
