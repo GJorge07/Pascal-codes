@@ -14,7 +14,7 @@ begin
 end;
 
 procedure transformamatriz(var w1,w2:matriz;m,n:longint);
-var i,j:longint;
+var i,j:longint; 
 begin
     for i:=1 to m do
         for j:=1 to n do
