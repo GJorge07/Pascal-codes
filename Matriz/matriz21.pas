@@ -12,6 +12,15 @@ begin
             read(m[i,j]);
 end;
 
+function pecapretapodetomar(var m:matriz; i, j: longint): boolean;
+begin
+    pecapretapodetomar := false;
+    if (i+2 <= 8) and (j-2 >= 1) and (m[i+1,j-1] = 1) and (m[i+2,j-2] = 0) then
+        pecapretapodetomar := true
+    else if (i+2 <= 8) and (j+2 <= 8) and (m[i+1,j+1] = 1) and (m[i+2,j+2] = 0) then
+        pecapretapodetomar := true;
+end;
+
 procedure podemtomarbrancas(var m:matriz);
 var i,j,cont:longint;
 begin
@@ -40,12 +49,31 @@ begin
     for i:=1 to 7 do
     begin
         for j:=1 to 8 do
-            if m[i,j] = -1 then
+            if not pecapretapodetomar(m,i,j) then
             begin
-                if (m[i+1,j-1] = 0) or (m[i+1,j+1] = 0) then
+                if m[i,j] = -1 then
                 begin
-                    write(i,'-',j,' ');
-                    cont:=cont+1;
+                    if -1 = (m[i,1])  then
+                    begin 
+                        if m[i+1,j+1] = 0 then
+                        begin
+                            write(i,'-',j,' ');
+                            cont:=cont+1;
+                        end;
+                    end
+                    else if (-1 = m[i,8]) then
+                    begin
+                        if m[i+1,j-1] = 0 then
+                        begin
+                            write(i,'-',j,' ');
+                            cont:=cont+1;
+                        end;
+                    end
+                    else if (m[i+1,j-1] = 0) or (m[i+1,j+1] = 0) then
+                    begin
+                        write(i,'-',j,' ');
+                        cont:=cont+1;
+                    end;
                 end;
             end;
     end;
@@ -62,7 +90,23 @@ begin
         for j:=1 to 8 do
             if m[i,j] = -1 then
             begin
-                if (m[i+1,j-1] = -1) and (m[i+1,j+1] = -1) then
+                if (-1 = m[i,1])  then
+                begin
+                    if m[i+1,j+1] = -1 then
+                    begin
+                        write(i,'-',j,' ');
+                        cont:=cont+1;
+                    end;
+                end
+                else if (-1 =m[i,8]) then
+                begin
+                    if m[i+1,j-1] = -1 then
+                    begin
+                        write(i,'-',j,' ');
+                        cont:=cont+1;
+                    end;
+                end
+                else if (m[i+1,j-1] = -1) and (m[i+1,j+1] = -1) then
                 begin
                     write(i,'-',j,' ');
                     cont:=cont+1;
@@ -85,4 +129,3 @@ begin
     naopodesemover(m);
     writeln;
 end.
-{falta arrumar preferencia de tomar sobre mover}
