@@ -34,12 +34,14 @@ begin
         for j := 1 to n do
             if w[i, j] = 0 then
             begin
-                if ((j = 1) or (w[i, j-1] = -1)) and (j < n) and (w[i, j+1] = 0) then
+            {conta as horizontais}
+                if ((j = 1) or (w[i, j-1] = -1)) and (j < n) and (w[i, j+1] = 0) then {se ta na 1 coluna ou c antes n tem letra e se não tá na ultima coluna e dps tem letra}
                 begin
                     cont := cont + 1;
                     w[i, j] := cont;
                 end
-                else if ((i = 1) or (w[i-1, j] = -1)) and (i < m) and (w[i+1, j] = 0) then
+                {conta as verticais}
+                else if ((i = 1) or (w[i-1, j] = -1)) and (i < m) and (w[i+1, j] = 0) then {se ta na primeira linha ou se antes n tem letra e se nao ta na ultima linha e dps tem letra}
                 begin
                     cont := cont + 1;
                     w[i, j] := cont;
