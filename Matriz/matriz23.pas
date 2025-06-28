@@ -12,7 +12,7 @@ begin
         for j:=1 to n do
             read(m[i,j]);
 end;
-
+{peguei essas proximas funções do quadmagico1}
 function linhas(var m:matriz;n:longint):longint;
 var i,j,soma1,soma:longint;
     iguais:boolean;
