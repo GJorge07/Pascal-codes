@@ -122,7 +122,7 @@ begin
         s2:=soma_submatriz(w,i,j,m,n);
         somasub:=s1+s2-m[i,j];
         if somasub = somatotal - somasub then
-            writeln('i',' ','j');
+            writeln(i,' ',j);
         end;
 end.
     
